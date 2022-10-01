@@ -1,0 +1,18 @@
+{{ define "main" }}
+<article class="article">
+    <div class="container">
+            <div class="intro">Blog ini cuma berisi catatan pribadi saya sebagai insan yang masih terus belajar dan bingung akan eksistensi dan kondisi dari semua ini. Jadi ya apa yang jadi pikiran saya atau hal yang terjadi dalam hidup saya kemungkinan akan menjadi catatan di blog ini.</div>
+            <div class="line"></div>
+        <div class="main">
+            <ul>
+                {{ range where .Site.RegularPages "Section" "blog" }}
+                <li class="titleOnly">
+                    <span class="dateTime">{{ .PublishDate.Format "2 Jan 2006" }}</span>
+                    <a href="{{.Permalink}}">{{.Title}}</a>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+    </div>
+</article>
+{{ end }}

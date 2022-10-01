@@ -1,0 +1,11 @@
+{{ define "main" }}
+<article class="article">
+    <div class="container">
+        <div class="single">
+            <div class="judulPost">{{ .Title }}</div>
+            <div class="isiPost">{{ .Content }}</div>
+            <div class="tglPublish">Published {{ .PublishDate.Format "2 Jan 2006" }} — {{ math.Round (div (countwords .Content) 220.0) }} min read</div>
+        </article>
+        </div>
+    </div>
+{{ end }}
